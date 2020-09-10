@@ -176,10 +176,9 @@ and should return the average number of words per item in the array.
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength(/*code here*/){
-
-    /*code here*/
-
+function getAverageWordLength(arr){
+    const i = 0;
+    arr[i].split(' ').length -1;
 }
 
 
@@ -264,8 +263,19 @@ var regionalFlavors = ["Pink Bubblegum",
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"]
 
-function getRandomFlavors(/*code here*/){
-
-    /*code here*/
-
-}
+    let randomFlavors = [];
+    function getRandomFlavors(arr1, arr2, arr3, newArr){
+        for(let i = 0; i < arr1.length + 1; i++){
+          let randomFlavor = Math.random();
+              if (randomFlavor < 0.33){
+                newArr.push(arr1[i]);
+              } else if (randomFlavor > 0.34 && randomFlavor < 0.66){
+                newArr.push(arr2[i]);
+              } else if (randomFlavor > 0.67 && randomFlavor <= 1){
+                newArr.push(arr3[i]);
+              }
+        }
+        return newArr;
+    }
+    getRandomFlavors(newFlavors, seasonalFlavors, regionalFlavors, randomFlavors)
+    console.log(randomFlavors);
